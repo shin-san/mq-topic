@@ -106,7 +106,6 @@ public class IBMMQConfig {
         jmsComponent.setMessageIdEnabled(true);
         jmsComponent.setIncludeSentJMSMessageID(true);
         jmsComponent.setIncludeAllJMSXProperties(true);
-        jmsComponent.setSubscriptionDurable(true);
         jmsComponent.setConnectionFactory(mqConnectionFactory());
 
 //        jmsComponent.setConnectionFactory(userCredentialsConnectionFactoryAdapter());
