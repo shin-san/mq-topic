@@ -51,16 +51,19 @@ public class SampleMessageRoute extends RouteBuilder {
         from("direct:requestMessage").routeId("producerRoute")
                 .log("Request: ${body}")
                 .marshal(sampleMessageFormat)
+                .setHeader("JMSXAppID", simple("JC_TEST"))
                 .to(ibmMqUrl+"?exchangePattern=InOnly").id("sendQueue")
                 .process(sampleResponseProcessor)
                 .log("Response: ${body}")
                 .end();
 
         from(ibmSub1Url).routeId("sub1Route")
+                .log("Camel Headers: ${headers}")
                 .log("Sub1 received the payload: ${body}")
                 .end();
 
         from(ibmSub2Url).routeId("sub2Route")
+                .log("Camel Headers: ${headers}")
                 .log("Sub2 received the payload: ${body}")
                 .end();
     }
