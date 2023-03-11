@@ -103,7 +103,7 @@ public class IBMMQConfig {
     public JmsComponent jmsComponent() {
 
         JmsComponent jmsComponent = new JmsComponent();
-        jmsComponent.setConnectionFactory(cachingConnectionFactory());
+        jmsComponent.setConnectionFactory(mqConnectionFactory());
 
 //        jmsComponent.setConnectionFactory(userCredentialsConnectionFactoryAdapter());
 
