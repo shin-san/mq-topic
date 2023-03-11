@@ -37,4 +37,4 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSH_KEY }}
           source: "./target/*.war"
-          target: "mq-topic"
+          target: "."

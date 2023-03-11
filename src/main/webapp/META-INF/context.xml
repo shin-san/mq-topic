@@ -30,8 +30,8 @@
 
     <Environment name="ibm.mq.url"                  value="ibmMq:topic:dev/"                                    type="java.lang.String"/>
     <Environment name="ibm.mq.deadLetterUri"        value="ibmMq:queue:DEV.DEAD.LETTER.QUEUE"                   type="java.lang.String"/>
-    <Environment name="ibm.sub.url"               value="ibmMq:topic:dev/?clientId=4&amp;subscriptionDurable=true&amp;subscriptionName=DEV.queue1"               type="java.lang.String"/>
-    <Environment name="ibm.sub2.url"               value="ibmMq:topic:dev/?clientId=45amp;subscriptionDurable=true&amp;subscriptionName=DEV.queue2"               type="java.lang.String"/>
+    <Environment name="ibm.sub.url"               value="ibmMq:topic:dev/?subscriptionDurable=true&amp;subscriptionName=DEV.queue1"               type="java.lang.String"/>
+    <Environment name="ibm.sub2.url"               value="ibmMq:topic:dev/?subscriptionDurable=true&amp;subscriptionName=DEV.queue2"               type="java.lang.String"/>
 
     <Environment name="management.endpoint.health.enabled"      value="true"                                    type="java.lang.String"/>
 
