@@ -4,7 +4,6 @@ import au.com.integral.demo.mqtopic.model.SampleMessage;
 import au.com.integral.demo.mqtopic.model.SampleResponse;
 import au.com.integral.demo.mqtopic.processor.ErrorResponseProcessor;
 import au.com.integral.demo.mqtopic.processor.SampleResponseProcessor;
-import org.apache.camel.ExchangePattern;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.jackson.JacksonDataFormat;
 import org.springframework.beans.factory.annotation.Autowired;
