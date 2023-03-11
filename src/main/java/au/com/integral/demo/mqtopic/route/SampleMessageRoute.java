@@ -6,6 +6,7 @@ import au.com.integral.demo.mqtopic.processor.ErrorResponseProcessor;
 import au.com.integral.demo.mqtopic.processor.SampleResponseProcessor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.jackson.JacksonDataFormat;
+import org.apache.camel.component.jms.JmsConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -51,7 +52,7 @@ public class SampleMessageRoute extends RouteBuilder {
         from("direct:requestMessage").routeId("producerRoute")
                 .log("Request: ${body}")
                 .marshal(sampleMessageFormat)
-                .setHeader("JMSXAppID", simple("JC_TEST"))
+                .setHeader(JmsConstants.JMS_X_GROUP_ID, simple("JC_TEST"))
                 .to(ibmMqUrl+"?exchangePattern=InOnly").id("sendQueue")
                 .process(sampleResponseProcessor)
                 .log("Response: ${body}")
