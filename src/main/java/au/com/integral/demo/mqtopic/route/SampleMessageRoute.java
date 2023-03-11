@@ -53,6 +53,8 @@ public class SampleMessageRoute extends RouteBuilder {
                 .log("Request: ${body}")
                 .marshal(sampleMessageFormat)
                 .setHeader(JmsConstants.JMS_X_GROUP_ID, simple("JC_TEST"))
+                .setHeader(JmsConstants.JMS_HEADER_XUSER_ID, simple("JC_TEST"))
+                .setHeader(JmsConstants.JMS_HEADER_CORRELATION_ID, header("RequestID"))
                 .to(ibmMqUrl+"?exchangePattern=InOnly").id("sendQueue")
                 .process(sampleResponseProcessor)
                 .log("Response: ${body}")
