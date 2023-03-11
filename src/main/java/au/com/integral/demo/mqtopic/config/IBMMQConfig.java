@@ -103,6 +103,8 @@ public class IBMMQConfig {
     public JmsComponent jmsComponent() {
 
         JmsComponent jmsComponent = new JmsComponent();
+        jmsComponent.setClientId("mq-topic");
+        jmsComponent.setSubscriptionDurable(true);
         jmsComponent.setConnectionFactory(cachingConnectionFactory());
 
 //        jmsComponent.setConnectionFactory(userCredentialsConnectionFactoryAdapter());
